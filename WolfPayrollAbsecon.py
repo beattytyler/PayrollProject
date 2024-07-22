@@ -246,9 +246,6 @@ class PayrollApp:
         self.button_remove_hours = tk.Button(root, text="Remove Hours", command=self.remove_hours)
         self.button_remove_hours.grid(row=3, column=2, padx=10, pady=5)
 
-        self.button_export_to_file = tk.Button(root, text="Export to File", command=self.export_payroll_to_file)
-        self.button_export_to_file.grid(row=3, column=3, padx=10, pady=5)
-
         self.text_payroll = tk.Text(root, height=20, width=100)
         self.text_payroll.grid(row=4, column=0, columnspan=5, padx=10, pady=5)
 
