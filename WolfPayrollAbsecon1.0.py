@@ -353,49 +353,6 @@ class PayrollApp:
 
         self.text_payroll.yview_moveto(scroll_pos)
 
-    def export_payroll_to_file(self):
-        start, end = self.payroll_calendar.current_pay_period()
-        filename = r"C:\Users\tyler\OneDrive\Desktop\absecon_payroll_report.txt"
-
-        try:
-            with open(filename, "w") as file:  # Open in write mode
-                file.write(f"Current Pay Period: {start.strftime('%m/%d/%Y')} - {end.strftime('%m/%d/%Y')}\n")
-
-                total_hours_summary = {}  # Dictionary to hold total hours for each employee
-
-                for employee_id, employee_data in self.payroll_calendar.employees.items():
-                    employee_name = employee_data['name']
-                    work_schedule = employee_data['work_schedule']
-                    total_hours_worked = 0.0
-                    
-                    file.write(f"Employee ID: {employee_id}, Name: {employee_name}\n")
-                    
-                    # Aggregate hours
-                    for date in sorted(work_schedule.keys()):
-                        if self.payroll_calendar.current_period_start <= date <= self.payroll_calendar.current_period_end:
-                            preset_hours = work_schedule[date]
-                            if preset_hours > 0:
-                                file.write(f"    Date: {date.strftime('%m/%d/%Y')}, Preset Hours: {preset_hours}\n")
-                                total_hours_worked += preset_hours
-                                if employee_id in self.payroll_calendar.payroll and date in self.payroll_calendar.payroll[employee_id]:
-                                    added_hours = self.payroll_calendar.payroll[employee_id][date]
-                                    if added_hours > 0:
-                                        file.write(f"        Added Hours: {added_hours}\n")
-                                        total_hours_worked += added_hours
-                    
-                    file.write(f"    Total Hours Worked: {total_hours_worked}\n\n")
-                    
-                    # Add to the summary dictionary
-                    total_hours_summary[employee_name] = total_hours_worked
-
-                # Write summary
-                file.write("Hours Worked Summary:\n")
-                for name, hours in total_hours_summary.items():
-                    file.write(f"{name}, {hours}\n")
-
-        except Exception as e:
-            print(f"Error writing to file: {e}")
-
 if __name__ == "__main__":
     root = tk.Tk()
     app = PayrollApp(root)
