@@ -23,11 +23,15 @@ class PayrollCalendar:
         except Exception as e:
             print(f"Error calculating current pay period: {e}")
 
-    def update_pay_period(self):
+    def update_pay_period(self, direction='next'):
         try:
-            today = datetime.today()
-            if today > self.current_period_end:
-                self.current_period_start, self.current_period_end = self.calculate_current_pay_period()
+            if direction == 'next':
+                today = datetime.today()
+                if today > self.current_period_end:
+                    self.current_period_start, self.current_period_end = self.calculate_current_pay_period()
+            elif direction == 'previous':
+                self.current_period_start = self.current_period_start - timedelta(days=self.pay_period_length)
+                self.current_period_end = self.current_period_end - timedelta(days=self.pay_period_length)
         except Exception as e:
             print(f"Error updating pay period: {e}")
 
@@ -246,8 +250,14 @@ class PayrollApp:
         self.button_remove_hours = tk.Button(root, text="Remove Hours", command=self.remove_hours)
         self.button_remove_hours.grid(row=3, column=2, padx=10, pady=5)
 
+        self.button_previous_pay_period = tk.Button(root, text="Previous Pay Period", command=lambda: self.update_pay_period('previous'))
+        self.button_previous_pay_period.grid(row=3, column=3, padx=10, pady=5)
+
+        self.button_next_pay_period = tk.Button(root, text="Next Pay Period", command=lambda: self.update_pay_period('next'))
+        self.button_next_pay_period.grid(row=3, column=4, padx=10, pady=5)
+
         self.text_payroll = tk.Text(root, height=20, width=100)
-        self.text_payroll.grid(row=4, column=0, columnspan=5, padx=10, pady=5)
+        self.text_payroll.grid(row=4, column=0, columnspan=6, padx=10, pady=5)
 
         self.text_pay_period = tk.Text(root, height=1, width=30)
         self.text_pay_period.grid(row=5, column=0, columnspan=2, padx=10, pady=5)
@@ -302,10 +312,10 @@ class PayrollApp:
         except ValueError:
             print("Invalid date format.")
 
-    def update_pay_period(self):
-        self.payroll_calendar.update_pay_period()
+    def update_pay_period(self, direction='next'):
+        self.payroll_calendar.update_pay_period(direction)
         self.update_payroll_display()
-        
+
     def update_payroll_display(self):
         scroll_pos = self.text_payroll.yview()[0]
 
