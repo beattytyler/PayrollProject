@@ -179,7 +179,7 @@ class PayrollCalendar:
                         0: 0.0,  # Monday
                         1: 0.0,  # Tuesday
                         2: 6.0,  # Wednesday
-                        3: 6.0,  # Thursday
+                        3: 0.0,  # Thursday
                         4: 0.0,  # Friday
                         5: 0.0,  # Saturday
                         6: 0.0   # Sunday
@@ -190,10 +190,130 @@ class PayrollCalendar:
                     'work_schedule': self.generate_weekly_schedule({
                         0: 0.0,  # Monday
                         1: 0.0,  # Tuesday
+                        2: 6.0,  # Wednesday
+                        3: 6.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 7.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '8': {
+                    'name': 'John G',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
                         2: 0.0,  # Wednesday
                         3: 0.0,  # Thursday
                         4: 0.0,  # Friday
-                        5: 7.0,  # Saturday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '9': {
+                    'name': 'Michael F',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '10': {
+                    'name': 'Dean K',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '11': {
+                    'name': 'Eric S',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '12': {
+                    'name': 'Cole B',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '13': {
+                    'name': 'Vincenzo M',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '14': {
+                    'name': 'Sean D',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '15': {
+                    'name': 'Alexa K',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '16': {
+                    'name': 'Jameson M',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                '17': {
+                    'name': 'Kayla D',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
                         6: 0.0   # Sunday
                     })
                 },
