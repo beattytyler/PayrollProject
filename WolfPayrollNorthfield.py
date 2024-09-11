@@ -114,11 +114,11 @@ class PayrollCalendar:
                 '1': {
                     'name': 'Tyler B',
                     'work_schedule': self.generate_weekly_schedule({
-                        0: 8.0,  # Monday
-                        1: 8.0,  # Tuesday
-                        2: 0.0,  # Wednesday
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 6.0,  # Wednesday
                         3: 0.0,  # Thursday
-                        4: 8.0,  # Friday
+                        4: 12.0,  # Friday
                         5: 0.0,  # Saturday
                         6: 0.0   # Sunday
                     })
@@ -127,20 +127,20 @@ class PayrollCalendar:
                 '2': {
                     'name': 'Tai T',
                     'work_schedule': self.generate_weekly_schedule({
-                        0: 0.0,  # Monday
-                        1: 6.0,  # Tuesday
+                        0: 6.0,  # Monday
+                        1: 0.0,  # Tuesday
                         2: 0.0,  # Wednesday
-                        3: 6.0,  # Thursday
+                        3: 0.0,  # Thursday
                         4: 0.0,  # Friday
-                        5: 0.0,  # Saturday
-                        6: 6.0   # Sunday
+                        5: 6.0,  # Saturday
+                        6: 7.0   # Sunday
                     })
                 },
 
                 '3': {
                     'name': 'Julie T',
                     'work_schedule': self.generate_weekly_schedule({
-                        0: 5.0,  # Monday
+                        0: 6.5,  # Monday
                         1: 0.0,  # Tuesday
                         2: 0.0,  # Wednesday
                         3: 0.0,  # Thursday
@@ -152,13 +152,13 @@ class PayrollCalendar:
                 '4': {
                     'name': 'Chloe B',
                     'work_schedule': self.generate_weekly_schedule({
-                        0: 6.0,  # Monday
+                        0: 0.0,  # Monday
                         1: 0.0,  # Tuesday
-                        2: 6.0,  # Wednesday
+                        2: 0.0,  # Wednesday
                         3: 0.0,  # Thursday
-                        4: 6.0,  # Friday
+                        4: 0.0,  # Friday
                         5: 0.0,  # Saturday
-                        6: 7.0   # Sunday
+                        6: 0.0   # Sunday
                     })
                 },
                 '5': {
@@ -178,7 +178,7 @@ class PayrollCalendar:
                     'work_schedule': self.generate_weekly_schedule({
                         0: 0.0,  # Monday
                         1: 0.0,  # Tuesday
-                        2: 6.0,  # Wednesday
+                        2: 0.0,  # Wednesday
                         3: 0.0,  # Thursday
                         4: 0.0,  # Friday
                         5: 0.0,  # Saturday
@@ -190,7 +190,7 @@ class PayrollCalendar:
                     'work_schedule': self.generate_weekly_schedule({
                         0: 0.0,  # Monday
                         1: 0.0,  # Tuesday
-                        2: 6.0,  # Wednesday
+                        2: 0.0,  # Wednesday
                         3: 6.0,  # Thursday
                         4: 0.0,  # Friday
                         5: 7.0,  # Saturday
@@ -250,7 +250,7 @@ class PayrollCalendar:
                     'work_schedule': self.generate_weekly_schedule({
                         0: 0.0,  # Monday
                         1: 0.0,  # Tuesday
-                        2: 0.0,  # Wednesday
+                        2: 6.0,  # Wednesday
                         3: 0.0,  # Thursday
                         4: 0.0,  # Friday
                         5: 0.0,  # Saturday
@@ -260,10 +260,10 @@ class PayrollCalendar:
                 '13': {
                     'name': 'Vincenzo M',
                     'work_schedule': self.generate_weekly_schedule({
-                        0: 0.0,  # Monday
-                        1: 0.0,  # Tuesday
+                        0: 6.5,  # Monday
+                        1: 8.0,  # Tuesday
                         2: 0.0,  # Wednesday
-                        3: 0.0,  # Thursday
+                        3: 8.0,  # Thursday
                         4: 0.0,  # Friday
                         5: 0.0,  # Saturday
                         6: 0.0   # Sunday
@@ -310,6 +310,18 @@ class PayrollCalendar:
                     'work_schedule': self.generate_weekly_schedule({
                         0: 0.0,  # Monday
                         1: 0.0,  # Tuesday
+                        2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                                '17': {
+                    'name': 'Josh R',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 6.0,  # Tuesday
                         2: 0.0,  # Wednesday
                         3: 0.0,  # Thursday
                         4: 0.0,  # Friday
@@ -460,6 +472,7 @@ class PayrollApp:
         self.text_payroll.delete("1.0", tk.END)
 
         total_hours_summary = {}
+        
 
         for employee_id, employee_data in self.payroll_calendar.employees.items():
             employee_name = employee_data['name']
