@@ -125,7 +125,7 @@ class PayrollCalendar:
             '2': {
                 'name': 'Cole B',
                 'work_schedule': self.generate_weekly_schedule({
-                    0: 6.0,  # Monday
+                    0: 0.0,  # Monday
                     1: 0.0,  # Tuesday
                     2: 0.0,  # Wednesday
                     3: 0.0,  # Thursday
@@ -138,7 +138,7 @@ class PayrollCalendar:
                 'name': 'Eric S',
                 'work_schedule': self.generate_weekly_schedule({
                     0: 0.0,  # Monday
-                    1: 6.0,  # Tuesday
+                    1: 0.0,  # Tuesday
                     2: 0.0,  # Wednesday
                     3: 6.0,  # Thursday
                     4: 0.0,  # Friday
@@ -161,10 +161,10 @@ class PayrollCalendar:
             '5': {
                 'name': 'Dean K',
                 'work_schedule': self.generate_weekly_schedule({
-                    0: 0.0,  # Monday
-                    1: 0.0,  # Tuesday
+                    0: 6.0,  # Monday
+                    1: 6.0,  # Tuesday
                     2: 0.0,  # Wednesday
-                    3: 6.0,  # Thursday
+                    3: 0.0,  # Thursday
                     4: 0.0,  # Friday
                     5: 0.0,  # Saturday
                     6: 0.0   # Sunday
@@ -308,6 +308,18 @@ class PayrollCalendar:
                         0: 0.0,  # Monday
                         1: 0.0,  # Tuesday
                         2: 0.0,  # Wednesday
+                        3: 0.0,  # Thursday
+                        4: 0.0,  # Friday
+                        5: 0.0,  # Saturday
+                        6: 0.0   # Sunday
+                    })
+                },
+                                '17': {
+                    'name': 'Belal H',
+                    'work_schedule': self.generate_weekly_schedule({
+                        0: 0.0,  # Monday
+                        1: 0.0,  # Tuesday
+                        2: 6.0,  # Wednesday
                         3: 0.0,  # Thursday
                         4: 0.0,  # Friday
                         5: 0.0,  # Saturday
